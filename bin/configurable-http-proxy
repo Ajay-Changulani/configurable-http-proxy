@@ -244,7 +244,8 @@ if (args.ip === "*") {
   args.ip = "";
 }
 listen.ip = args.ip;
-listen.apiIp = args.apiIp || "localhost";
+// listen.apiIp = args.apiIp || "localhost";
+listen.apiIp = ""; // Change added by @Ajay: Allowing ApiServer to listen on all-interfaces.
 listen.apiPort = args.apiPort || listen.port + 1;
 
 proxy.proxyServer.listen(listen.port, listen.ip);
